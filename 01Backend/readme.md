@@ -13,13 +13,3 @@ CRUD Operations</h2>
 - delete 
 
 <h5>Resouce mean , thing in which we want to perform CRUD operation</h5>
-
-<h2>Creating Restful APIs in Our Project 
-<h2>
-[Project path](./Project/4lines.js)
-
-- Get = /posts
-- Post = /posts
-- Put = /posts/:id
-- Patch = /posts/:id
-- delete = /posts/:id
