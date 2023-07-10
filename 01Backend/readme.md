@@ -16,7 +16,7 @@ CRUD Operations</h2>
 
 <h2>Creating Restful APIs in Our Project 
 <h2>
-'./Project/4lines.js'
+./Project/4lines.js
 
 - Get = /posts
 - Post = /posts
