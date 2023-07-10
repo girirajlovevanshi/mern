@@ -3,3 +3,23 @@
 Best practices for REST API design
 </h2>
 https://stackoverflow.blog/2020/03/02/best-practices-for-rest-api-design/
+
+<h2>
+CRUD Operations</h2>
+- Get
+- Post 
+- Put 
+- Patch 
+- delete 
+
+<h5>Resouce mean , thing in which we want to perform CRUD operation</h5>
+
+<h2>Creating Restful APIs in Our Project 
+<h2>
+'./Project/4lines.js'
+
+- Get = /posts
+- Post = /posts
+- Put = /posts/:id
+- Patch = /posts/:id
+- delete = /posts/:id
