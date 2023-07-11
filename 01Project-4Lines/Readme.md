@@ -13,3 +13,20 @@
 `touch index.js`
 
 `mkdir public`
+
+- In Index.js 
+
+first creating server 
+```javascript
+const express = require('express'); 
+const app = express();
+
+const port = 8080;
+
+app.get("/",(req,res)=>{
+ //get request from root
+});
+
+app.listen(port); // server is running on port 8080
+
+```
