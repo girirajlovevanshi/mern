@@ -1,19 +1,19 @@
 4LINES
 
-`01Project-4Lines> npm init`
-<br>
+- Setup Project
+```bash
+npm init
 
-`01Project-4Lines> npm i express`
-<br>
+npm i express
 
-`01Project-4Lines> npm  i ejs`
+npm i ejs
 
-`01Project-4Lines> npm i nodemon -g`
+npm i nodemon -g
 
-`touch index.js`
+touch index.js
 
-`mkdir public`
-
+mkdir public
+```
 - In Index.js 
 
 first creating server 
@@ -30,3 +30,13 @@ app.get("/",(req,res)=>{
 app.listen(port); // server is running on port 8080
 
 ```
+- add urlencoded function
+The urlencoded function is used to parse the incoming requests with URL-encoded payloads. It is a built-in middleware function in Express based on a body parser module.
+
+When there is a HTTP POST request from the client with content type application/x-www-form-urlencoded, this middleware parses the data and populates the req.body object with key-value pairs.
+
+```js
+app.use(express.urlencoded({extended:true} ))
+
+```
+
