@@ -4,7 +4,12 @@ const app = express();
 
 app.use(express.urlencoded({extended:true} ))
 
-const port = 8080;
+app.set(express.static(path.join(__dirname, 'public')))
+app.set("view engine", "ejs")
+app.set("views",path.join(__dirname, "views"))
+
+
+const port = 4000;
 
 app.get("/",(req,res)=>{
 
