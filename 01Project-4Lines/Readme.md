@@ -66,5 +66,12 @@ app.set("views",path.join(__dirname, "views"))
 
 - add home.ejs in "views" dir
 
-`mkdir views/home.ejs`
+- write a boiler plate code 
 
+- ```js
+app.get("/",(req,res)=>{
+    res.render("home")
+});
+```
+
+-`nodemon   `

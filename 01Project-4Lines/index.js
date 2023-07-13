@@ -12,7 +12,7 @@ app.set("views",path.join(__dirname, "views"))
 const port = 4000;
 
 app.get("/",(req,res)=>{
-
+    res.render("home")
 });
 
 app.listen(port);
