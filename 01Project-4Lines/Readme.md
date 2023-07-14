@@ -68,6 +68,7 @@ app.set("views",path.join(__dirname, "views"))
 
 - write a boiler plate code 
 
+update index.js
 ```js
 app.get("/",(req,res)=>{
     res.render("home")

@@ -6,6 +6,13 @@
     <title>4Lines</title>
 </head>
 <body>
-    
+    <h1>4Lines</h1>
+    <% for (post of posts) { %>
+        <div>
+            <h3>-<%= post.content %></h3>
+            <h5>@<%= post.username %></h5>
+        </div>
+
+    <% } %>
 </body>
 </html>
