@@ -1,37 +1,47 @@
-const express = require('express');
-const path = require('path');
-const app = express();
+const path = require('path')
+const express = require('express')
+const port = 8080;
 
-app.use(express.urlencoded({extended:true} ))
+const app = express()
 
-app.set(express.static(path.join(__dirname, 'public')))
+
+app.use(express.urlencoded({extended: true}))
+
 app.set("view engine", "ejs")
-app.set("views",path.join(__dirname, "views"))
 
 
-const port = 4000;
+app.set('views', path.join(__dirname, 'views'))
 
+app.use(express.static(path.join(__dirname,'public')))
+
+// posts
 let posts = [
     {
-        username : "giri",
-        content : "4 din ki chandni fir anderi raat",
+        username : "giriraj",
+        content : " Char pal ki chandni, fir anderi raat"
     },
     {
-        username : "4Lines",
-        content : "4 lines for 4Lines",
+        username : "mistermind",
+        content : " galat shok kab gunaho me bdal jaye, babu pata nahi chalta"
     },
     {
-        username : "broken Heart",
-        content : "4ro disha me dikhe bs tu hi tu",
-    },
-    {
-        username : "sayar",
-        content : "4 labj bya kr gye jidgi",
+        username : "4Lines_Offical",
+        content : " 4 lines 4Lines ke naam"
     },
 ]
 
-app.get("/",(req,res)=>{
+app.get('/',(req,res)=>{
     res.render("home", {posts})
-});
+})
 
-app.listen(port);
+app.get('/post/new',(req,res)=>{
+    res.render("new");
+})
+
+app.post('/post',(req,res)=>{
+    let {username, content} = req.body;
+    posts.push({username,content});
+    res.redirect("/");
+})
+
+app.listen(port)
