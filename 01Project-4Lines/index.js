@@ -17,14 +17,17 @@ app.use(express.static(path.join(__dirname,'public')))
 // posts
 let posts = [
     {
+        id: "111",
         username : "giriraj",
         content : " Char pal ki chandni, fir anderi raat"
     },
     {
+        id: "112",
         username : "mistermind",
         content : " galat shok kab gunaho me bdal jaye, babu pata nahi chalta"
     },
     {
+        id: "113",
         username : "4Lines_Offical",
         content : " 4 lines 4Lines ke naam"
     },
