@@ -2,12 +2,13 @@ const path = require('path')
 const express = require('express')
 const {v4 : uuidv4} = require('uuid') // v4 is the version 4 of uuid package
 const port = 8080;
+const methodOverride = require('method-override')
 
 const app = express()
 
 
 app.use(express.urlencoded({extended: true}))
-
+app.use(methodOverride("_method"))
 app.set("view engine", "ejs")
 
 
@@ -45,7 +46,8 @@ app.get('/post/new',(req,res)=>{
 
 app.post('/post',(req,res)=>{
     let {username, content} = req.body;
-    posts.push({username,content});
+    let id = uuidv4()
+    posts.push({id, username,content});
     res.redirect("/");
 })
 
@@ -54,5 +56,20 @@ app.get("/post/:id", (req,res)=>{
     let relatedPost = posts.find((post) => id === post.id)
     res.send(relatedPost);
 })
+
+app.get("/post/:id/edit", (req,res)=>{
+    let {id} = req.params
+    let relatedPost = posts.find((post)=>id === post.id)
+    res.render("edit", {relatedPost})
+})
+
+app.patch("/post/update/:id",(req,res)=>{
+    let {id} = req.params;
+    let newContent = req.body.content;
+    let relatedPost = posts.find((post)=>id === post.id)
+    relatedPost.content = newContent
+    res.redirect("/");
+})
+
 
 app.listen(port)

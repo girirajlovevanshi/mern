@@ -8,14 +8,16 @@
 </head>
 <body>
     <h1>4Lines</h1>
+    <p>4 Lines for you <a href="http://localhost:8080/post/new"><button>Create a new Post</button></a></p>
     <% for ( post of posts ){ %>
         <div>
             <h3> @<%=post.username %></h3>
             <h5> <%=post.content %></h5>
             <h6> #id:<%=post.id %></h6>
+        <a href="http://localhost:8080/post/<%=post.id %>/edit"><button>Edit Post</button></a>
         </div>
     <% } %>
-    <a href="http://localhost:8080/post/new"><button>Create a new Post</button></a>
+    <br>
 </body>
 </html>
 

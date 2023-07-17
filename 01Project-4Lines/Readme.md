@@ -79,3 +79,10 @@ app.get("/",(req,res)=>{
 
 this package hepls us to create uniqe id each time
 `npm install uuid`
+
+
+form only accpet get and post method, to use patch or delete method we use `method-override` package 
+that override get or post method with selected one, use npm page of this package for implemention details
+```bash
+npm install method-override
+```
