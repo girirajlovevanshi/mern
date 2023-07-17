@@ -71,5 +71,9 @@ app.patch("/post/update/:id",(req,res)=>{
     res.redirect("/");
 })
 
-
+app.delete("/post/delete/:id",(req,res)=>{
+    let {id} = req.params;
+    posts = posts.filter((post)=>id !== post.id);
+    res.redirect("/")
+})
 app.listen(port)
